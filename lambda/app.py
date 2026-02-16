@@ -19,6 +19,8 @@ def lambda_handler(event, context):
         body = json.dumps(payload)
     )
     result = json.loads(response['body'].read())
-
-    return result
+    return {
+        "statusCode":200,
+        "body":json.dumps(result)
+    }
 
